@@ -1,0 +1,16 @@
+.pokemon_type {
+  position: absolute;
+  left: 61%;
+  top: 38%;
+}
+
+.li_type {
+  display: flex;
+  align-items: center;
+  color: #aaa;
+}
+
+.type_image {
+  height: 30px;
+  margin-right: 10px;
+}

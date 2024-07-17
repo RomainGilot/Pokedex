@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&family=Oxanium&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxanium", cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 15px;
+  position: relative;
+  transition: transform 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pokedex {
+  width: 100%;
+  max-width: 800px;
+}
+
+.pokemon_image {
+  position: absolute;
+  bottom: 48%;
+  left: 32%;
+  transform: translate(-63%, 20%);
+  height: 22%;
+}
+
+.pokemon_data {
+  position: absolute;
+  font-weight: 600;
+  color: #aaa;
+  top: 60%;
+  right: 56%;
+  font-size: clamp(8px, 5vw, 25px);
+}
+
+.pokemon_name {
+  color: #3a444d;
+  text-transform: capitalize;
+}
+
+form {
+  position: absolute;
+  top: 65%;
+  left: 11.7%;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 13%;
+  left: 31%;
+  transform: translate(-57%, 0);
+  display: flex;
+  gap: 20px;
+}
+
+.buttons_right {
+  position: absolute;
+  top: 53%;
+  left: 77%;
+  transform: translate(-57%, 0);
+  display: flex;
+  gap: 20px;
+}
+
+.light {
+  position: absolute;
+  left: 85%;
+  top: 70%;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  background-color: #ffcc66;
+  box-shadow: 0 0 20px 10px rgba(255, 204, 102, 0.7);
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  51%,
+  100% {
+    opacity: 0.5;
   }
+}
+
+.slide-down {
+  transform: translateY(100%);
+}
+
+.slide-up {
+  transform: translateY(-100%);
+}
+
+.zoomed {
+  transform: scale(1.5);
+}
+
+.closedMessage {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.closedMessage p {
+  margin-bottom: 10px;
+}
+
+.close-button,
+.zoom-button,
+.open-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button {
+  background-color: red;
+  left: 19%;
+  top: 10%;
+}
+
+.zoom-button {
+  background-color: orange;
+  left: 23%;
+  top: 10%;
+}
+
+.open-button {
+  background-color: green;
+  left: 27%;
+  top: 10%;
+}
+
+.close-button:hover,
+.zoom-button:hover,
+.open-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }

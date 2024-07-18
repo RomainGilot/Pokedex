@@ -7,9 +7,8 @@ import pokedex from "./assets/images/pokedex.png";
 import Light from "./components/Light/Light";
 import clickSound from "./assets/sounds/click.mp3";
 import SmallButton from "./components/Button/SmallButton";
-import SmallButtonBlue from "./components/Button/SmallButtonBlue";
 
-import { FaVolumeMute, FaVolumeUp, FaInfo } from "react-icons/fa";
+import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const App = () => {
   const [pokemonNumber, setPokemonNumber] = useState(1);

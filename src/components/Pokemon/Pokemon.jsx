@@ -12,9 +12,14 @@ import clickSound from "../../assets/sounds/click.mp3";
 import SmallButtonBlue from "../Button/SmallButtonBlue";
 import { FaInfo } from "react-icons/fa";
 
+const getSoundState = () => {
+  return localStorage.getItem("sound") === "on";
+};
+
 const Pokemon = ({ pokemonNumber }) => {
   const [pokemonData, setPokemonData] = useState(null);
   const [detailView, setDetailView] = useState("types");
+  const [soundOn, setSoundOn] = useState(getSoundState());
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -29,9 +34,16 @@ const Pokemon = ({ pokemonNumber }) => {
     fetchPokemonData();
   }, [pokemonNumber]);
 
+  useEffect(() => {
+    setSoundOn(getSoundState());
+  });
+
   const playClickSound = () => {
-    const audio = new Audio(clickSound);
-    audio.play();
+    console.log(soundOn);
+    if (soundOn) {
+      const audio = new Audio(clickSound);
+      audio.play();
+    }
   };
 
   const handleDetailViewChange = (view) => {
